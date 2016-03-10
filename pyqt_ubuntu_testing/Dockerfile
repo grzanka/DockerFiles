@@ -17,10 +17,13 @@ RUN apt-get update && apt-get install -y mc htop vim git coreutils expect \
 
 # Install libraries
 RUN apt-get update && apt-get install -y \
-    python3-numpy \
-    python3-scipy \
-    python3-matplotlib \
+    python3-pip \
+    python3-numpy python3-scipy python3-matplotlib \
+    python3-pyqt \
     && rm -rf /var/lib/apt/lists/*
+
+# Install python packages
+RUN pip3 install pydicom
 
 # Add user
 RUN useradd -ms /bin/bash grzanka
