@@ -53,5 +53,5 @@ RUN echo "qwerty" | vncpasswd -f > ~/.vnc/passwd && chmod 600 ~/.vnc/passwd
 RUN cd ~/git && git clone https://github.com/Programmica/pyqt5-tutorial.git
 
 # Add supervisor cfg, start it
-#ADD services.conf /etc/supervisor/conf.d/
+ADD services.conf /etc/supervisor/conf.d/
 CMD echo "test\n" | /usr/bin/sudo -S /usr/bin/supervisord -c /etc/supervisor/supervisord.conf && bash
