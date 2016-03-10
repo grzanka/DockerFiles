@@ -25,6 +25,9 @@ RUN apt-get update && apt-get install -y \
 # Install python packages
 RUN pip3 install pydicom
 
+# start terminal automatically
+RUN echo "@lxterminal --working-directory=/home/grzanka/test" >> /etc/xdg/lxsession/LXDE/autostart
+
 # Add user
 RUN useradd -ms /bin/bash grzanka
 RUN echo "grzanka:grzanka" | chpasswd
