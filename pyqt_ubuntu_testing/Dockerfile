@@ -26,20 +26,20 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install pydicom
 
 # start terminal automatically
-RUN echo "@lxterminal --working-directory=/home/grzanka/test" >> /etc/xdg/lxsession/LXDE/autostart
+RUN echo "@lxterminal --working-directory=/home/test/git" >> /etc/xdg/lxsession/LXDE/autostart
 
 # Add user
-RUN useradd -ms /bin/bash grzanka
-RUN echo "grzanka:grzanka" | chpasswd
-RUN adduser grzanka sudo
+RUN useradd -ms /bin/bash test
+RUN echo "test:test" | chpasswd
+RUN adduser test sudo
 
-# Make directory to host mounted volume and change its permission
-RUN mkdir -p /home/grzanka/test
-RUN chown grzanka:grzanka /home/grzanka/test
+# Make directory to host tests
+RUN mkdir -p /home/test/git
+RUN chown test:test /home/test/git
 
 # Activate user
-USER grzanka
-WORKDIR /home/grzanka
+USER test
+WORKDIR /home/test
 
 # Expose ports.
 EXPOSE 22
@@ -49,6 +49,9 @@ EXPOSE 5901
 RUN mkdir .vnc && chmod 700 .vnc
 RUN echo "qwerty" | vncpasswd -f > ~/.vnc/passwd && chmod 600 ~/.vnc/passwd
 
+# clone some example repository
+RUN cd ~/git && git clone https://github.com/Programmica/pyqt5-tutorial.git
+
 # Add supervisor cfg, start it
-ADD services.conf /etc/supervisor/conf.d/
-CMD echo "grzanka\n" | /usr/bin/sudo -S /usr/bin/supervisord -c /etc/supervisor/supervisord.conf && bash
+#ADD services.conf /etc/supervisor/conf.d/
+CMD echo "test\n" | /usr/bin/sudo -S /usr/bin/supervisord -c /etc/supervisor/supervisord.conf && bash
