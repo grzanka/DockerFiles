@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y mc htop vim git coreutils expect \
 RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-numpy python3-scipy python3-matplotlib \
-    python3-pyqt \
+    python3-pyqt5 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install python packages
@@ -30,6 +30,9 @@ RUN useradd -ms /bin/bash grzanka
 RUN echo "grzanka:grzanka" | chpasswd
 RUN adduser grzanka sudo
 
+# Make directory to host mounted volume and change its permission
+RUN mkdir -p /home/grzanka/test
+RUN chown grzanka:grzanka /home/grzanka/test
 
 # Activate user
 USER grzanka

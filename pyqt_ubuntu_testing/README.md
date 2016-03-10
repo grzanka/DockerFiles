@@ -1,10 +1,10 @@
 # Docker, Ubuntu, PyQT, VNC + SSH
 
-# What's in ?
+## What's in ?
 
 Dockerfile with Ubuntu image and necessary libraries needed to run PyQT based software. Applications with GUI can be run by connection through VNC or SSH (with "-X" flag).
 
-# How to run it ?
+## How to run it ?
 
 Put your code under testing in some directory under your host system, i.e:
 
