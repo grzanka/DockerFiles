@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Leszek Grzanka <grzanka@agh.edu.pl>
 
 # Install LXDE and VNC server.

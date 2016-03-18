@@ -1,4 +1,4 @@
-FROM grzanka/ubuntu_vnc_ssh
+FROM grzanka/ubuntu_vnc_ssh:16.04
 MAINTAINER Leszek Grzanka <grzanka@agh.edu.pl>
 
 # Install libraries
