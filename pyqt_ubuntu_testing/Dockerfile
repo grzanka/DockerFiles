@@ -3,7 +3,7 @@ MAINTAINER Leszek Grzanka <grzanka@agh.edu.pl>
 
 # Install libraries
 RUN echo "test\n" | /usr/bin/sudo -S bash -c "apt-get update && apt-get install -y \
-    python3-pip \
+    python3-pip python3-setuptools \
     python3-numpy python3-scipy python3-matplotlib \
     python3-pyqt5 \
     && rm -rf /var/lib/apt/lists/*"
