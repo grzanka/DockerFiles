@@ -9,7 +9,7 @@ RUN echo "test\n" | /usr/bin/sudo -S bash -c "apt-get update && apt-get install 
     && rm -rf /var/lib/apt/lists/*"
 
 # Install python packages
-RUN echo "test\n" | /usr/bin/sudo -S pip3 install pydicom
+RUN echo "test\n" | /usr/bin/sudo -H -S pip3 install pydicom
 
 # Make directory to host tests
 RUN mkdir -p ~/git
