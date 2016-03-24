@@ -9,7 +9,7 @@ Dockerfile with Ubuntu image and necessary libraries needed to run Flair.
 Run docker container, mapping the ports:
 
 ```
-docker run --rm -p 15022:22 -p 15901:5901 -it grzanka/flair_fluka_ubuntu_
+docker run --rm -p 15022:22 -p 15901:5901 -it grzanka/flair_fluka_ubuntu
 ```
 
 You can use SSH to connect to docker:
