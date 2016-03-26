@@ -4,7 +4,7 @@ ADD manifest.pp /
 
 RUN /bin/bash --login -c "puppet apply -d --modulepath=/modules /manifest.pp"
 
-RUN sudo usermod -aG sudo cmsbuild
+#RUN sudo usermod -aG sudo cmsbuild
 
 RUN echo "cmsbuild ALL=(ALL) ALL" >> /etc/sudoers
 
