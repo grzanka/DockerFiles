@@ -33,4 +33,7 @@ RUN /bin/bash --login -c "librarian-puppet install"
 RUN mkdir -p /opt/cms
 RUN chown -R cmsbuild:cmsbuild /opt/cms
 
+RUN echo "cmsbuild ALL=(ALL) ALL" >> /etc/sudoers
+
+
 CMD /bin/bash
