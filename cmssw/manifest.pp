@@ -38,7 +38,7 @@ package {"cms+local-cern-siteconf+sm111124":
     "server_path"    => "cmssw/cms",
   }]
 }->
-package {"cms+cmssw+CMSSW_8_1_0_pre1":
+package {"cms+cmssw+CMSSW_8_1_0_pre4":
   ensure             => present,
   provider           => cmsdist,
   install_options    => [{
