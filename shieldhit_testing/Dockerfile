@@ -5,7 +5,7 @@ MAINTAINER Leszek Grzanka <grzanka@agh.edu.pl>
 RUN apt-get -qq update && \
     apt-get install -qq -y git gfortran make && \
     apt-get install -qq -y python3 python3-setuptools && \
-    apt-get install -qq -y python3-numpy && \
+    apt-get install -qq -y python3-numpy python3-matplotlib gnuplot-nox && \
     rm -rf /var/lib/apt/lists/*
 
 # Add user
