@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:latest
 MAINTAINER Leszek Grzanka <grzanka@agh.edu.pl>
 
 # Install LXDE and VNC server.
