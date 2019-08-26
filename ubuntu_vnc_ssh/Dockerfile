@@ -8,7 +8,7 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 # Install ssh server
-RUN apt-get update && apt-get install -y openssh-server supervisor
+RUN apt-get update && apt-get install -y openssh-server supervisor sudo
 RUN mkdir -p /var/run/sshd
 
 # Install utilities
